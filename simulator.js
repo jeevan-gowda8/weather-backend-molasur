@@ -54,7 +54,7 @@ function generateWeatherData() {
     const wind_dir_str = getCardinalDirection(wind_dir);
 
     // Rainfall (mm) - Disabled / 0.0 mm
-    const rain = 0.0;
+    const rain = 2.5;
 
     // Air Quality PM2.5 / PM10 (ug/m^3) - Healthy / Good Air Quality Range
     // EPA/WHO Good Standard: PM2.5 < 12.0 ug/m3, PM10 < 25.0 ug/m3
