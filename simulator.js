@@ -127,3 +127,24 @@ transmitTelemetry();
 
 // 2. Scheduled recurring transmission every 1.5 minutes
 setInterval(transmitTelemetry, INTERVAL_MS);
+
+// 3. Lightweight HTTP server for Render Web Service Health Checks
+const http = require('http');
+const PORT = process.env.PORT || 10000;
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({
+        status: 'online',
+        service: 'Solar Weather Station Telemetry Simulator',
+        targetUrl: TARGET_URL,
+        deviceApiKey: DEVICE_API_KEY,
+        intervalMinutes: 1.5,
+        totalTransmissions: transmissionCount,
+        lastActive: new Date().toISOString()
+    }, null, 2));
+});
+
+server.listen(PORT, () => {
+    console.log(`[HTTP Server] Health-check listener running on port ${PORT} for Render.`);
+});
