@@ -49,7 +49,7 @@ function generateWeatherData() {
     const uv = solarRadiation > 0 ? parseFloat(((solarRadiation / 850) * 8.5 + (Math.random() * 0.5)).toFixed(1)) : 0.0;
 
     // Wind Speed (m/s) & Direction (0 - 359°)
-    const wind_speed = parseFloat((2.5 + Math.random() * 5.5).toFixed(2));
+    const wind_speed = parseFloat((5.5 + Math.random() * 5.5).toFixed(2));
     const wind_dir = Math.floor(Math.random() * 360);
     const wind_dir_str = getCardinalDirection(wind_dir);
 
