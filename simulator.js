@@ -53,12 +53,13 @@ function generateWeatherData() {
     const wind_dir = Math.floor(Math.random() * 360);
     const wind_dir_str = getCardinalDirection(wind_dir);
 
-    // Rainfall (mm) - mostly 0.0 with occasional light drizzle
-    const rain = Math.random() < 0.15 ? parseFloat((Math.random() * 1.5).toFixed(2)) : 0.0;
+    // Rainfall (mm) - Disabled / 0.0 mm
+    const rain = 0.0;
 
-    // Air Quality PM2.5 / PM10 (ug/m^3)
-    const pm25 = parseFloat((15.0 + Math.random() * 25.0).toFixed(1));
-    const pm10 = parseFloat((pm25 + 10.0 + Math.random() * 20.0).toFixed(1));
+    // Air Quality PM2.5 / PM10 (ug/m^3) - Healthy / Good Air Quality Range
+    // EPA/WHO Good Standard: PM2.5 < 12.0 ug/m3, PM10 < 25.0 ug/m3
+    const pm25 = parseFloat((5.0 + Math.random() * 6.5).toFixed(1)); // 5.0 - 11.5 ug/m^3 (Healthy)
+    const pm10 = parseFloat((pm25 + 5.0 + Math.random() * 7.0).toFixed(1)); // 10.0 - 25.0 ug/m^3 (Healthy)
 
     return {
         apiKey: DEVICE_API_KEY,
