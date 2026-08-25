@@ -1,0 +1,16 @@
+{
+  "name": "solar-monitoring-simulator",
+  "version": "1.0.0",
+  "description": "Automated background simulator sending realistic solar weather station telemetry every 1.5 minutes",
+  "main": "simulator.js",
+  "scripts": {
+    "start": "node simulator.js"
+  },
+  "keywords": [
+    "iot",
+    "weather-station",
+    "simulator"
+  ],
+  "author": "",
+  "license": "ISC"
+}
